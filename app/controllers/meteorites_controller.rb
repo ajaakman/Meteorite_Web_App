@@ -1,5 +1,6 @@
 class MeteoritesController < ApplicationController
   before_action :set_meteorite, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /meteorites
   # GET /meteorites.json
