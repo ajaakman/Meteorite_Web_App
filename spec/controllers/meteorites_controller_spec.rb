@@ -41,6 +41,12 @@ RSpec.describe MeteoritesController, type: :controller do
   # MeteoritesController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
+  before do
+    user = FactoryBot.create(:user)
+    allow(controller).to receive(:authenticate_user!).and_return(true)
+    allow(controller).to receive(:current_user).and_return(user)
+  end
+
   describe "GET #index" do
     it "returns a success response" do
       Meteorite.create! valid_attributes

@@ -30,4 +30,20 @@ RSpec.feature "Navbar", type: :feature do
     expect(page).to have_content("Meteorites")
   end
 
+  scenario "Go to Log In page from navbar" do
+    visit root_path
+    within('.navbar'){
+      click_on "Log In"
+    }
+    expect(page).to have_content("Forgot your password?")
+  end
+
+  scenario "Go to Sign Up page from navbar" do
+    visit root_path
+    within('.navbar'){
+      click_on "Sign Up"
+    }
+    expect(page).to have_content("Sign Up")
+  end
+
 end
