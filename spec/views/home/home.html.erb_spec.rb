@@ -1,5 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe "home/home.html.erb", type: :view do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "renders welcome text" do
+    render
+    expect(rendered).to match("Welcome to Artur's APP")
+  end
 end

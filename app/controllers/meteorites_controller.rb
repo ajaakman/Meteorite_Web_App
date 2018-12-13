@@ -69,6 +69,6 @@ class MeteoritesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def meteorite_params
-      params.require(:meteorite).permit(:name, :class, :mass, :year, :latitude, :longitude)
+      params.require(:meteorite).permit(:name, :meteorite_class, :mass, :year, :latitude, :longitude)
     end
 end

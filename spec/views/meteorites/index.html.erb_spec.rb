@@ -5,15 +5,15 @@ RSpec.describe "meteorites/index", type: :view do
     assign(:meteorites, [
       Meteorite.create!(
         :name => "Name",
-        :class => "Class",
+        :meteorite_class => "Class",
         :mass => 2.5,
         :year => 3,
         :latitude => 4.5,
         :longitude => 5.5
       ),
       Meteorite.create!(
-        :name => "Name",
-        :class => "Class",
+        :name => "Name1",
+        :meteorite_class => "Class",
         :mass => 2.5,
         :year => 3,
         :latitude => 4.5,
@@ -24,7 +24,8 @@ RSpec.describe "meteorites/index", type: :view do
 
   it "renders a list of meteorites" do
     render
-    assert_select "tr>td", :text => "Name".to_s, :count => 2
+    assert_select "tr>td", :text => "Name".to_s, :count => 1
+    assert_select "tr>td", :text => "Name1".to_s, :count => 1
     assert_select "tr>td", :text => "Class".to_s, :count => 2
     assert_select "tr>td", :text => 2.5.to_s, :count => 2
     assert_select "tr>td", :text => 3.to_s, :count => 2

@@ -29,11 +29,11 @@ RSpec.describe MeteoritesController, type: :controller do
   # Meteorite. As you add validations to Meteorite, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    {name: 'Alice', mass: 2.2, year: 1992, meteorite_class: 'A', latitude: 5.43, longitude: 2.54}
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    {name: 5, mass: 2.2, years: 'hello', meteorite_class: '', longitude: 2.54}
   }
 
   # This should return the minimal set of values that should be in the session
@@ -97,14 +97,14 @@ RSpec.describe MeteoritesController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        {name: 'Alice', mass: 2.2, year: 1992, meteorite_class: 'B', latitude: 5.43, longitude: 2.54}
       }
 
       it "updates the requested meteorite" do
         meteorite = Meteorite.create! valid_attributes
         put :update, params: {id: meteorite.to_param, meteorite: new_attributes}, session: valid_session
         meteorite.reload
-        skip("Add assertions for updated state")
+        #skip("Add assertions for updated state")
       end
 
       it "redirects to the meteorite" do

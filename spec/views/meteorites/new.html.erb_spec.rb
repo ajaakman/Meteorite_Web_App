@@ -4,7 +4,7 @@ RSpec.describe "meteorites/new", type: :view do
   before(:each) do
     assign(:meteorite, Meteorite.new(
       :name => "MyString",
-      :class => "MyString",
+      :meteorite_class => "MyString",
       :mass => 1.5,
       :year => 1,
       :latitude => 1.5,
@@ -19,7 +19,7 @@ RSpec.describe "meteorites/new", type: :view do
 
       assert_select "input[name=?]", "meteorite[name]"
 
-      assert_select "input[name=?]", "meteorite[class]"
+      assert_select "input[name=?]", "meteorite[meteorite_class]"
 
       assert_select "input[name=?]", "meteorite[mass]"
 

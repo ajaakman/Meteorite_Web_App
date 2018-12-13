@@ -4,7 +4,7 @@ RSpec.describe "meteorites/show", type: :view do
   before(:each) do
     @meteorite = assign(:meteorite, Meteorite.create!(
       :name => "Name",
-      :class => "Class",
+      :meteorite_class => "Class",
       :mass => 2.5,
       :year => 3,
       :latitude => 4.5,

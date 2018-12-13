@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181213105021) do
+ActiveRecord::Schema.define(version: 20181213122942) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "meteorites", force: :cascade do |t|
     t.string "name"
-    t.string "class"
+    t.string "meteorite_class"
     t.float "mass"
     t.integer "year"
     t.float "latitude"
