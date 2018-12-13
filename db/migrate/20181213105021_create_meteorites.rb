@@ -2,7 +2,7 @@ class CreateMeteorites < ActiveRecord::Migration[5.1]
   def change
     create_table :meteorites do |t|
       t.string :name
-      t.string :class
+      t.string :meteorite_class
       t.float :mass
       t.integer :year
       t.float :latitude
