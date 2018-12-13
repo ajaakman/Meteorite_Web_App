@@ -2,7 +2,11 @@
 
 <h1>Meteorites</h1>
 
-<table>
+<%= link_to 'New Meteorite', new_meteorite_path %>
+<br>
+<br>
+
+<table class="my_tables display responsive no-wrap">
   <thead>
     <tr>
       <th>Name</th>
@@ -11,7 +15,9 @@
       <th>Year</th>
       <th>Latitude</th>
       <th>Longitude</th>
-      <th colspan="3"></th>
+      <th></th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
 
@@ -31,7 +37,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Meteorite', new_meteorite_path %>

@@ -14,4 +14,11 @@
 //= require turbolinks
 //= require jquery3
 //= require bootstrap
+//= require dataTables/jquery.dataTables
+//= require dataTables/extras/dataTables.responsive
 //= require_tree .
+
+//$(document).ready(function() {
+$( document ).on('turbolinks:load', function() {
+  $(".my_tables").dataTable({responsive: true});
+});
