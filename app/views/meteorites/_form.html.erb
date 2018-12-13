@@ -1,0 +1,47 @@
+<%= form_with(model: meteorite, local: true) do |form| %>
+  <% if meteorite.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(meteorite.errors.count, "error") %> prohibited this meteorite from being saved:</h2>
+
+      <ul>
+      <% meteorite.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :meteorite_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :class %>
+    <%= form.text_field :class, id: :meteorite_class %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mass %>
+    <%= form.text_field :mass, id: :meteorite_mass %>
+  </div>
+
+  <div class="field">
+    <%= form.label :year %>
+    <%= form.number_field :year, id: :meteorite_year %>
+  </div>
+
+  <div class="field">
+    <%= form.label :latitude %>
+    <%= form.text_field :latitude, id: :meteorite_latitude %>
+  </div>
+
+  <div class="field">
+    <%= form.label :longitude %>
+    <%= form.text_field :longitude, id: :meteorite_longitude %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,2 @@
+class Meteorite < ApplicationRecord
+end
