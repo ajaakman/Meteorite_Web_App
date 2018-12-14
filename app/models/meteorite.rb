@@ -1,4 +1,6 @@
 class Meteorite < ApplicationRecord
+  has_many :users
+
   validates :name, presence: true, uniqueness: true
   validates :meteorite_class, presence: true
   validates :mass, presence: true

@@ -1,0 +1,37 @@
+<h1>Postings</h1>
+
+<table class="my_tables display responsive no-wrap">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Owner</th>
+      <th>Meteorite</th>
+      <th>Weight</th>
+      <th>Cost</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @postings.each do |posting| %>
+      <% if posting.order[0] == nil %>
+        <tr>
+          <td><button type="button" class="buy_button" value="<%= posting.id %>" >Buy</button></td>
+          <td><%= posting.user.email %></td>
+          <td><%= posting.meteorite.name %></td>
+          <td><%= posting.weight %></td>
+          <td><%= posting.cost %></td>
+          <td><%= link_to 'Show', posting %></td>
+          <td><%= link_to 'Edit', edit_posting_path(posting) %></td>
+          <td><%= link_to 'Destroy', posting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Posting', new_posting_path %>

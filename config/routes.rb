@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'cart/cart'
+  get 'cart/order'
+
+  resources :postings do
+    collection do
+      get :add_to_cart
+    end
+  end
   devise_for :users
   resources :meteorites
 
