@@ -5,6 +5,9 @@
   <thead>
     <tr>
       <th>Seller</th>
+      <th>Meteorite</th>
+      <th>Weight</th>
+      <th>Cost</th>
       <th>Added to Cart</th>
     </tr>
   </thead>
@@ -12,7 +15,10 @@
   <tbody>
     <% @new_orders.each do |order| %>
       <tr>
-        <td><%= order.user.email %></td>
+        <td><%= order.posting.user.email %></td>
+        <td><%= order.posting.meteorite.name %></td>
+        <td><%= order.posting.weight %></td>
+        <td><%= order.posting.cost %></td>
         <td><%= order.created_at %></td>
       </tr>
     <% end %>
@@ -29,6 +35,9 @@
   <thead>
     <tr>
       <th>Seller</th>
+      <th>Meteorite</th>
+      <th>Weight</th>
+      <th>Cost</th>
       <th>Order Placed On</th>
     </tr>
   </thead>
@@ -36,7 +45,10 @@
   <tbody>
     <% @old_orders.each do |order| %>
       <tr>
-        <td><%= order.user.email %></td>
+        <td><%= order.posting.user.email %></td>
+        <td><%= order.posting.meteorite.name %></td>
+        <td><%= order.posting.weight %></td>
+        <td><%= order.posting.cost %></td>
         <td><%= order.updated_at %></td>
       </tr>
     <% end %>
