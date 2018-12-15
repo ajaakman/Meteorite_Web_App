@@ -1,10 +1,10 @@
 <h1>Locations of recorded meteorite landings.</h1>
 
-Search meteorite by name: <input type="text" id="meteorite">
-Year: <%= select_tag(:year, options_for_select(['All','2012','2013'])) %>
+Search meteorite by name (Case Sensitive): <input type="text" id="meteorite">
+Year: <%= select_tag(:year, options_for_select(@uniqueYears)) %>
 
 <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9y8Rb43wZSt9LamheyaCQxVGY5AicH6o&callback=initMap&libraries=visualization">
+    src=<%= ENV['GOOGLEMAPS_KEY'] %>>
 </script>
 
 <div class="row">

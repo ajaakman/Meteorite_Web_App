@@ -1,6 +1,10 @@
 class HomeController < ApplicationController
   def home
 
+    @uniqueYears = Array.new
+    @uniqueYears << "All"
+    @uniqueYears = @uniqueYears + Meteorite.distinct.pluck(:year)
+
     @meteoritesData = Array.new
     @meteoriteName = Array.new
     @meteoriteFragmentsSold = Array.new
@@ -31,9 +35,6 @@ class HomeController < ApplicationController
     else
       @meteorites = Meteorite.where("name LIKE :prefix", prefix: "#{params[:letter]}%").where(year: params[:year])
     end
-    puts "&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&"
-    puts params[:letter]
-
     respond_to do |format|
       format.json { render json: {"meteorites" => @meteorites} }
     end
