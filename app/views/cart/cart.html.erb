@@ -4,6 +4,7 @@
 <table class="my_tables display responsive no-wrap">
   <thead>
     <tr>
+      <th></th>
       <th>Seller</th>
       <th>Meteorite</th>
       <th>Weight</th>
@@ -15,6 +16,7 @@
   <tbody>
     <% @new_orders.each do |order| %>
       <tr>
+        <td><button type="button" class="cancel_button" value="<%= order.id %>" >Cancel</button></td>
         <td><%= order.posting.user.email %></td>
         <td><%= order.posting.meteorite.name %></td>
         <td><%= order.posting.weight %></td>

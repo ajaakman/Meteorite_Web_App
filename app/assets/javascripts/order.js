@@ -18,5 +18,22 @@ $( document ).on('turbolinks:load', function() {
 
     })
 
+    $(".cancel_button").click(function() {
+
+      orderID = $(this).val()
+
+      $.ajax({
+        url: "delete_order",
+        type: "get",
+        data: {
+          order_id: orderID
+        },
+        success: function(response) {
+          location.reload();
+        }
+      })
+
+    })
+
   //})
 })

@@ -12,4 +12,8 @@ class CartController < ApplicationController
       order.save
     end
   end
+
+  def delete_order
+    Order.destroy(params[:order_id])
+  end
 end

@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   get 'cart/cart'
   get 'cart/order'
+  get 'cart/delete_order'
 
   resources :postings do
     collection do
