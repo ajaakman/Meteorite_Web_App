@@ -4,5 +4,35 @@
 .container {
   width: 90%;
   margin: 0 auto;
-  margin-top:50px;
+}
+
+#floating-panel {
+  position: absolute;
+  top: 200px;
+  left: 50%;
+  z-index: 5;
+  padding: 5px;
+  text-align: center;
+  font-family: 'Roboto','sans-serif';
+  line-height: 30px;
+  padding-left: 10px;
+}
+
+#map-canvas {
+ margin: 0;
+ padding: 0;
+ height: 500px;
+ max-width: none;
+}
+
+#map_container {
+  position: relative;
+}
+
+#map {
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 22.25%;
+    padding-top: 30px;
+    position: relative;
 }

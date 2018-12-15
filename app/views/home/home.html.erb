@@ -1,1 +1,17 @@
-<h1>Welcome to Artur's APP</h1>
+<h1>Locations of recorded meteorite landings.</h1>
+
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9y8Rb43wZSt9LamheyaCQxVGY5AicH6o&callback=initMap&libraries=visualization">
+</script>
+
+<div class="row">
+   <div class="col-xs-12">
+     <div id="map-canvas"> </div>
+   </div>
+</div>
+
+<div id="floating-panel">
+      <button id = "toggleMarker" class = "btn btn-default">Toggle Markers</button>
+      <button id = "toggleHeatmap" class = "btn btn-info">Toggle Heatmap</button>
+      <button id = "changeOpacity" class = "btn btn-warning">Change Opacity</button>
+</div>

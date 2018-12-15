@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :meteorites
 
+  get 'home/refreshHomeData'
   get 'home/about'
   get '/about', to: redirect('/home/about')
   get 'home/home'
