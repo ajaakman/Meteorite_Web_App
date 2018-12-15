@@ -32,7 +32,7 @@
                 <% if user_signed_in? %>
                   <li class="nav-item" style="padding-left: 10px; padding-right: 10px;"><font color="white" size="2">Logged in as: <%= current_user.email %></font></li>
                   <li class="active"> <%= link_to 'Edit profile', edit_user_registration_path %></li>
-                  <li class="active"> <%= link_to 'Cart', cart_cart_path %></li>
+                  <li class="active"> <%= link_to "Cart (#{Order.where(user_id: current_user.id, completed: false).count})", cart_cart_path %></li>
                   <li class="active"> <%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
                 <% else %>
                   <li class="active"> <%= link_to 'Sign Up', new_user_registration_path %></li>

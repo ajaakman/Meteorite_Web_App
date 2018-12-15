@@ -26,7 +26,14 @@ class HomeController < ApplicationController
   end
 
   def refreshHomeData
-    @meteorites = Meteorite.all
+    if params[:year] == "All"
+      @meteorites = Meteorite.where("name LIKE :prefix", prefix: "#{params[:letter]}%")
+    else
+      @meteorites = Meteorite.where("name LIKE :prefix", prefix: "#{params[:letter]}%").where(year: params[:year])
+    end
+    puts "&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&"
+    puts params[:letter]
+
     respond_to do |format|
       format.json { render json: {"meteorites" => @meteorites} }
     end

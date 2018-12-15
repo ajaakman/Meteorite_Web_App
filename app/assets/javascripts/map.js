@@ -96,6 +96,8 @@ function initMap() {
       url: "home/refreshHomeData",
       type: "get",
       data: {
+        letter: "",
+        year: "All"
       },
       success: function(response) {
         drawMap(response.meteorites);
@@ -107,12 +109,17 @@ function initMap() {
     myAjax();
   })
 
+  $("#year").change(function() {
+    myAjax();
+  })
+
   function myAjax() {
     $.ajax({
-      url: "index/refreshHomeData",
+      url: "home/refreshHomeData",
       type: "get",
       data: {
         letter: $("#meteorite").val(),
+        year: $("#year").val()
       },
       success: function(response) {
         drawMap(response.meteorites);
