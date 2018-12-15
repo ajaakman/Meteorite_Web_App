@@ -5,7 +5,7 @@ namespace :seed do
   task meteorites: :environment do
 
     # Drop the old tables data before importing the new stuff.
-    Orders.destroy_all
+    Order.destroy_all
     Posting.destroy_all
     Meteorite.destroy_all
 
