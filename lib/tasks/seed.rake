@@ -1,4 +1,3 @@
-# Datasets from Kaggle.com.
 require 'csv'
 
 namespace :seed do
@@ -6,6 +5,7 @@ namespace :seed do
   task meteorites: :environment do
 
     # Drop the old tables data before importing the new stuff.
+    Orders.destroy_all
     Posting.destroy_all
     Meteorite.destroy_all
 
