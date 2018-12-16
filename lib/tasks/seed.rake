@@ -10,7 +10,7 @@ namespace :seed do
     Meteorite.destroy_all
 
     CSV.foreach("lib/assets/meteorite-landings.csv", :headers =>true) do |row|
-      if row[6].to_i < 2018 && row[6].to_i > 2011 && row[7].to_i != 0 && row[8].to_i != 0
+      if row[6].to_i < 2018 && row[6].to_i > 2009 && row[7].to_i != 0 && row[8].to_i != 0
         puts row.inspect
         Meteorite.create!(
         name: row[0].to_s,

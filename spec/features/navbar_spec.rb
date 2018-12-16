@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature "Navbar", type: :feature do
   scenario "Go to Home page" do
     visit root_path
-    expect(page).to have_content("Welcome to Artur's APP")
+    expect(page).to have_content("Locations of recorded meteorite landings from 2010-2014.")
   end
 
   scenario "Go to Home page from navbar" do
@@ -11,7 +11,7 @@ RSpec.feature "Navbar", type: :feature do
     within('.navbar'){
       click_on "Home"
     }
-    expect(page).to have_content("Welcome to Artur's APP")
+    expect(page).to have_content("Locations of recorded meteorite landings from 2010-2014.")
   end
 
   scenario "Go to About page from navbar" do
